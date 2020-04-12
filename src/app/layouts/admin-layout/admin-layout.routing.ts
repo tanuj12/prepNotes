@@ -9,10 +9,13 @@ import { TablesComponent } from "../../pages/tables/tables.component";
 import { TypographyComponent } from "../../pages/typography/typography.component";
 import { HomePageComponent } from 'src/app/pages/home-page/home-page.component';
 import { DashboardComponent } from 'src/app/pages/dashboard/dashboard.component';
+import { NoteQComponent } from 'src/app/pages/note-q/note-q.component';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 export const AdminLayoutRoutes: Routes = [
   { path: "dashboardOld", component: DashboardComponentOld },
+  { path: "notes", component: NoteQComponent },
+  { path: "QnA", component: NoteQComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "homePage", component: HomePageComponent },
   { path: "icons", component: IconsComponent },

@@ -16,6 +16,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NgxExtendedPdfViewerModule } from "ngx-extended-pdf-viewer";
 import {MatExpansionModule} from '@angular/material/expansion';
+import { NoteQComponent } from './pages/note-q/note-q.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     NgxExtendedPdfViewerModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, HomePageComponent, DashboardComponent],
+  declarations: [AppComponent, AdminLayoutComponent, HomePageComponent, DashboardComponent, NoteQComponent],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })
