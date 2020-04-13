@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note-q.component.scss']
 })
 export class NoteQComponent implements OnInit {
-
+  files: File[] = [];
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+
+  onSelect(event) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+  }
+
+  onRemove(event) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
 }

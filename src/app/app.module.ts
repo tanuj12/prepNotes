@@ -17,10 +17,12 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NgxExtendedPdfViewerModule } from "ngx-extended-pdf-viewer";
 import {MatExpansionModule} from '@angular/material/expansion';
 import { NoteQComponent } from './pages/note-q/note-q.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    NgxDropzoneModule,
     MatExpansionModule,
     FormsModule,
     HttpClientModule,

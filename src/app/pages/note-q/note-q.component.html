@@ -1,3 +1,9 @@
 <div class="content">
-  <p>works</p>
+  <p>Drop or select .docx files to upload</p>
+  <ngx-dropzone (change)="onSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.wordprocessingml.document'">
+    <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+    <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+        <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+    </ngx-dropzone-preview>
+</ngx-dropzone>
 </div>
