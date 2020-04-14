@@ -1,9 +1,204 @@
 <div class="content">
-  <p>Drop or select .docx files to upload</p>
-  <ngx-dropzone (change)="onSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.wordprocessingml.document'">
-    <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
-    <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-        <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
-    </ngx-dropzone-preview>
-</ngx-dropzone>
+  <div class=" row">
+    <div class=" col-12">
+      <div class=" card ">
+        <div class=" card-header">
+          <div class=" row">
+            <div class=" col-sm-6 text-left">
+              <p >Drop or select .docx files to upload</p>
+            </div>
+            <div class=" col-sm-6 text-left">
+            </div>
+            <div class="card-body" style="padding-top: 0%;">
+              <ngx-dropzone (change)="onSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.wordprocessingml.document'">
+                <ngx-dropzone-label>Click here to select a .docx file</ngx-dropzone-label>
+                <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                    <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+                </ngx-dropzone-preview>
+              </ngx-dropzone>
+              <div class="row" style="margin-top: 1%;">
+                <div class=" col-lg-5 col-3 col-md-5 col-sm-4 "></div>
+                <div class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
+                  &nbsp;&nbsp;<button  type="button" class="btn btn-outline-primary btn-info btn-lg" >Upload</button>
+
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class=" row">
+    <div class=" col-12">
+      <div class=" card ">
+        <div class=" ">
+          <div class=" row">
+            <div class=" col-sm-6 text-left">
+            </div>
+            <div class=" col-sm-6 text-left">
+            </div>
+            <div class="card-body" >
+              <mat-accordion >
+                <mat-expansion-panel >
+                  <mat-expansion-panel-header>
+                    Ask a Qestion
+                  </mat-expansion-panel-header>
+                  <mat-card>
+                  <mat-card>
+                    <form  >
+                      <div >
+                          <div class="row">
+                            <div class="col-12 col-sm-12 col-lg-8 col-md-8" style="margin-top: 5px;">
+                              <input type="text" class="form-control form-control-success " id="inputSuccess1" placeholder="Ask a Question">
+                              <!-- <mat-error ">Please enter a valid question</mat-error> -->
+                            </div>
+                            <div  class="col-0 col-sm-0 col-lg-4 col-md-4">
+                              <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+                                color='accent' type="submit">Ask</button>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                    <hr>
+                  </mat-card>
+                  <mat-accordion  style="position: relative; top: 30px;">
+                    <mat-expansion-panel >
+                      <mat-expansion-panel-header>
+                        a
+                        <div id="share-buttons">
+
+
+
+                          <!-- Email -->
+                          <a href="mailto:?Subject=Question Answer &amp;Body=">
+                              <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+                          </a>
+
+                          <!-- Facebook -->
+                          <a href="http://www.facebook.com/sharer.php?u=" target="_blank">
+                              <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                          </a>
+
+
+                          <!-- LinkedIn -->
+                          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank">
+                              <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                          </a>
+
+                          <!-- Print -->
+                          <a href="javascript:;">
+                              <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+                          </a>
+
+
+
+
+                          <!-- Twitter -->
+                          <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+                              <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                          </a>
+
+
+                        <a href="whatsapp://send?text="><img src="assets/img/whatsapp.png" alt="WhatsApp" style="border-radius: 100%" /></a>
+
+                        </div>
+                      </mat-expansion-panel-header>
+                      <p>b</p>
+                     <!-- <p *ngIf='! (item.answer == "") ' > {{item.answer}}</p>
+                     <p *ngIf=' (item.answer == "") ' > No answer Found</p> -->
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                  <!-- <p *ngIf ='!qNa' class ="info-text mat-body-1" >No questions Asked</p> -->
+                  </mat-card>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class=" row">
+    <div class=" col-12">
+      <div class=" card ">
+        <div class=" ">
+          <div class=" row">
+            <div class=" col-sm-6 text-left">
+            </div>
+            <div class=" col-sm-6 text-left">
+            </div>
+            <div class="card-body" >
+              <mat-accordion >
+                <mat-expansion-panel >
+                  <mat-expansion-panel-header>
+                    Generate Notes
+                  </mat-expansion-panel-header>
+                  <form  >
+                    <div *ngIf='1'>
+                      <div class="row">
+                        <div class="col-12 col-sm-12 col-lg-5 col-md-8">
+                          <p>Click the Button to generate notes from the uploaded document.(After generating you can preview notes before downloading.)</p>
+                        </div>
+                        <div  class="col-0 col-sm-0 col-lg-4 col-md-4">
+                          <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+                            color='accent' type="submit">Generate Notes</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div *ngIf='0'>
+                          <p class="d-inline">Notes have been generated.(You can preview notes before downloading.)</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+                            color='accent' type="submit">&nbsp;&nbsp; Preview Notes&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+                            color='accent' type="submit">Download Notes</button>
+                    </div>
+                  </form>
+                  <hr>
+                  <div class=" row">
+                    <div class=" col-12">
+                      <div class=" card ">
+                        <div class=" card-header">
+                          <div class=" row">
+                            <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
+                              <h4 class=" card-title">Recently created Notes</h4>
+                            </div>
+                            <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
+                            </div>
+                            <div class="card-body">
+                              <div style="border: 1px solid;">
+                                <!--****** agron slider -->
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br><br>
+                                <br>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

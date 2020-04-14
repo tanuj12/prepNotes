@@ -18,10 +18,14 @@ import { NgxExtendedPdfViewerModule } from "ngx-extended-pdf-viewer";
 import {MatExpansionModule} from '@angular/material/expansion';
 import { NoteQComponent } from './pages/note-q/note-q.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    MatCardModule,
+    MatFormFieldModule,
     NgxDropzoneModule,
     MatExpansionModule,
     FormsModule,
