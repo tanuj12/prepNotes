@@ -20,6 +20,7 @@ import { NoteQComponent } from './pages/note-q/note-q.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,7 @@ import {MatCardModule} from '@angular/material/card';
     NgxExtendedPdfViewerModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, HomePageComponent, DashboardComponent, NoteQComponent],
+  declarations: [AppComponent, AdminLayoutComponent, HomePageComponent, DashboardComponent, NoteQComponent, LoginComponent],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })
