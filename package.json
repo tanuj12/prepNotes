@@ -73,6 +73,7 @@
     "@angular/platform-browser-dynamic": "9.0.5",
     "@angular/router": "9.0.5",
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
+    "angular-bootstrap-md": "^9.1.0",
     "chart.js": "2.8.0",
     "core-js": "3.6.4",
     "ngx-dropzone": "^2.2.2",

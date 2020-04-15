@@ -21,10 +21,12 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import { LoginComponent } from './pages/login/login.component';
-
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { RegisterComponent } from './pages/register/register.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    MDBBootstrapModule.forRoot(),
     MatCardModule,
     MatFormFieldModule,
     NgxDropzoneModule,
@@ -38,7 +40,7 @@ import { LoginComponent } from './pages/login/login.component';
     NgxExtendedPdfViewerModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, HomePageComponent, DashboardComponent, NoteQComponent, LoginComponent],
+  declarations: [AppComponent, AdminLayoutComponent, HomePageComponent, DashboardComponent, NoteQComponent, LoginComponent, RegisterComponent],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })
