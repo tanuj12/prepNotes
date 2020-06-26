@@ -3,20 +3,22 @@ import { ROUTES } from "../sidebar/sidebar.component";
 import { Location } from "@angular/common";
 import { Router } from "@angular/router";
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-
+import { AuthService } from 'src/app/services/auth.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: "app-navbar",
   templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.css"]
+  styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   private listTitles: any[];
+  public a: boolean ;
   location: Location;
   mobile_menu_visible: any = 0;
   private toggleButton: any;
   private sidebarVisible: boolean;
-
   public isCollapsed = true;
+  private userStatus: Subscription;
 
   closeResult: string;
 
@@ -24,10 +26,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
     location: Location,
     private element: ElementRef,
     private router: Router,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private authService: AuthService
   ) {
+    if(AuthService.User !== null){
+      this.a = AuthService.User
+    }
+    // this.a = AuthService.userStatus.getValue()
     this.location = location;
     this.sidebarVisible = false;
+    // console.log(AuthService.User)
   }
   // function that adds color white/transparent to the navbar on resize (this is for the collapse)
    updateColor = () => {
@@ -41,6 +49,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
      }
    };
   ngOnInit() {
+    // this.authService.checkUser()
     window.addEventListener("resize", this.updateColor);
     this.listTitles = ROUTES.filter(listTitle => listTitle);
     const navbar: HTMLElement = this.element.nativeElement;
@@ -53,6 +62,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.mobile_menu_visible = 0;
       }
     });
+    this.userStatus = this.authService.getUser()
+    .subscribe((status)=>{
+      console.log('navbar: ',status)
+      this.a = status
+    })
   }
 
   collapse() {
@@ -66,6 +80,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
       navbar.classList.remove("bg-white");
     }
   }
+
+  logout() {
+    this.authService.logout();
+    AuthService.User = false
+  }
+
 
   sidebarOpen() {
     const toggleButton = this.toggleButton;
@@ -192,5 +212,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(){
      window.removeEventListener("resize", this.updateColor);
+     this.userStatus.unsubscribe()
   }
 }

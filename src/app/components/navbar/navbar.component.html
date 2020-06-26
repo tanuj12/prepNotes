@@ -1,6 +1,16 @@
 <nav class=" navbar navbar-expand-lg navbar-absolute navbar-transparent">
   <div class=" container-fluid">
-    <div class=" navbar-wrapper">
+    <div *ngIf='!a' class=" navbar-wrapper" style="margin-top:2%">
+      <div class=" navbar-toggle d-inline">
+        <button class=" navbar-toggler" type="button" (click)="sidebarToggle()">
+          <span class=" navbar-toggler-bar bar1"> </span>
+          <span class=" navbar-toggler-bar bar2"> </span>
+          <span class=" navbar-toggler-bar bar3"> </span>
+        </button>
+      </div>
+      <a class=" navbar-brand" href="javascript:void(0)"> {{ getTitle() }} </a>
+    </div>
+    <div *ngIf='a' class=" navbar-wrapper" >
       <div class=" navbar-toggle d-inline">
         <button class=" navbar-toggler" type="button" (click)="sidebarToggle()">
           <span class=" navbar-toggler-bar bar1"> </span>
@@ -23,7 +33,7 @@
       <span class=" navbar-toggler-bar navbar-kebab"> </span>
       <span class=" navbar-toggler-bar navbar-kebab"> </span>
     </button>
-    <div class=" navbar-collapse" [ngbCollapse]="isCollapsed" id="navigation">
+    <div *ngIf='a'  class=" navbar-collapse" [ngbCollapse]="isCollapsed" id="navigation">
       <ul class=" navbar-nav ml-auto">
         <li class=" search-bar input-group">
           <button
@@ -87,7 +97,7 @@
               <img alt="Profile Photo" src="assets/img/anime3.png" />
             </div>
             <b class=" caret d-none d-lg-block d-xl-block"> </b>
-            <p class=" d-lg-none">Log out</p>
+            <p *ngIf='a' class=" d-lg-none" >Log out</p>
           </a>
           <ul class=" dropdown-navbar" ngbDropdownMenu>
             <li class=" nav-link">
@@ -102,7 +112,7 @@
             </li>
             <li class=" dropdown-divider"></li>
             <li class=" nav-link">
-              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>
+              <a *ngIf='a' class=" nav-item" href="javascript:void(0)"(click)='logout()' ngbDropdownItem>
                 Log out
               </a>
             </li>

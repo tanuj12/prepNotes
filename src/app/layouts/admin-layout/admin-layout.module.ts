@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule ,ReactiveFormsModule } from "@angular/forms";
 
 import { AdminLayoutRoutes } from "./admin-layout.routing";
 import { DashboardComponentOld } from "../../pages/dashboard(old)/dashboard.component";
@@ -15,24 +15,52 @@ import { TypographyComponent } from "../../pages/typography/typography.component
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-
+import { DashboardComponent } from 'src/app/pages/dashboard/dashboard.component';
+import { NoteQComponent } from 'src/app/pages/note-q/note-q.component';
+import { LoginComponent, NgbdModalContent } from '../../pages/login/login.component';
+import { RegisterComponent, NgbdModalContent1 } from 'src/app/pages/register/register.component';
+import { HomePageComponent } from 'src/app/pages/home-page/home-page.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { AuthGuard } from 'src/app/guards/auth-guard.service';
+import { SafePipe } from 'src/app/pipes/safePipe';
+import {NgxDocViewerModule} from 'ngx-doc-viewer';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    NgxDropzoneModule,
+    MatExpansionModule,
     HttpClientModule,
     NgbModule,
+    NgxDocViewerModule,
+    MatProgressSpinnerModule,
   ],
   declarations: [
     DashboardComponentOld,
+    HomePageComponent,
+    DashboardComponent,
+    NoteQComponent,
+    LoginComponent,
+    NgbdModalContent,
+    NgbdModalContent1,
+    RegisterComponent,
     UserComponent,
     TablesComponent,
     IconsComponent,
     TypographyComponent,
     NotificationsComponent,
     MapComponent,
+    SafePipe
     // RtlComponent
-  ]
+  ],
+  providers: [AuthGuard]
 })
 export class AdminLayoutModule {}

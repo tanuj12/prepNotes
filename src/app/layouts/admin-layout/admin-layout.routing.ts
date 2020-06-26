@@ -10,14 +10,15 @@ import { TypographyComponent } from "../../pages/typography/typography.component
 import { HomePageComponent } from 'src/app/pages/home-page/home-page.component';
 import { DashboardComponent } from 'src/app/pages/dashboard/dashboard.component';
 import { NoteQComponent } from 'src/app/pages/note-q/note-q.component';
+import { AuthGuard } from 'src/app/guards/auth-guard.service';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
-
 export const AdminLayoutRoutes: Routes = [
-  { path: "dashboardOld", component: DashboardComponentOld },
-  { path: "notes", component: NoteQComponent },
-  { path: "QnA", component: NoteQComponent },
-  { path: "dashboard", component: DashboardComponent },
+  { path: "dashboardOld", component: DashboardComponentOld},
   { path: "homePage", component: HomePageComponent },
+  { path: "notes", component: NoteQComponent , canActivate: [AuthGuard]},
+  { path: "QnA", component: NoteQComponent, canActivate: [AuthGuard], },
+  { path: "dashboard", component: DashboardComponent ,canActivate: [AuthGuard],},
+
   { path: "icons", component: IconsComponent },
   { path: "maps", component: MapComponent },
   { path: "notifications", component: NotificationsComponent },

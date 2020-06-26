@@ -1,3 +1,4 @@
+
 <div class="content">
   <div class=" row">
     <div class=" col-12">
@@ -18,9 +19,12 @@
               </ngx-dropzone>
               <div class="row" style="margin-top: 1%;">
                 <div class=" col-lg-5 col-3 col-md-5 col-sm-4 "></div>
-                <div class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
-                  &nbsp;&nbsp;<button  type="button" class="btn btn-outline-primary btn-info btn-lg" >Upload</button>
-
+                <div *ngIf="!uploadingSpinner" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
+                 <button (click)='uploadDoc()' type="button" class="btn btn-outline-primary btn-info btn-lg" >Upload</button>
+                </div>
+                <div *ngIf="uploadingSpinner" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
+                  <h5>Uploading Files..Please wait</h5>
+                  <button type="button" disabled class="btn btn-outline-primary btn-info btn-lg" >Upload</button>
                 </div>
             </div>
           </div>
@@ -32,7 +36,7 @@
 
 
 
-  <div class=" row">
+  <div class=" row" >
     <div class=" col-12">
       <div class=" card ">
         <div class=" ">
@@ -43,11 +47,12 @@
             </div>
             <div class="card-body" >
               <mat-accordion >
-                <mat-expansion-panel >
+                <mat-expansion-panel [disabled]='!uploaded'>
                   <mat-expansion-panel-header>
                     Ask a Qestion
                   </mat-expansion-panel-header>
                   <mat-card>
+
                   <mat-card>
                     <form  >
                       <div >
@@ -137,28 +142,34 @@
             </div>
             <div class="card-body" >
               <mat-accordion >
-                <mat-expansion-panel >
+                <mat-expansion-panel [disabled]='!uploaded' >
                   <mat-expansion-panel-header>
                     Generate Notes
                   </mat-expansion-panel-header>
-                  <form  >
-                    <div *ngIf='1'>
+                  <form  [formGroup]='notesForm'>
+                    <div *ngIf='!notesReady && !waitingForDownload'>
                       <div class="row">
                         <div class="col-12 col-sm-12 col-lg-5 col-md-8">
+                          <input formControlName="name" type="text" class="form-control form-control-success " id="inputSuccess1" placeholder="Please enter the name to be given to the notes.">
                           <p>Click the Button to generate notes from the uploaded document.(After generating you can preview notes before downloading.)</p>
                         </div>
                         <div  class="col-0 col-sm-0 col-lg-4 col-md-4">
                           <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                            color='accent' type="submit">Generate Notes</button>
+                            color='accent' type="submit" (click)='generateNotes()'>Generate Notes</button>
                         </div>
                       </div>
                     </div>
-                    <div *ngIf='0'>
-                          <p class="d-inline">Notes have been generated.(You can preview notes before downloading.)</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                            color='accent' type="submit">&nbsp;&nbsp; Preview Notes&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div *ngIf="!notesReady && waitingForDownload">
+                      <h4>Processing Documents.Please wait..</h4>
+                      <mat-spinner style="stroke: blue;"></mat-spinner>
+                    </div>
+                    <div *ngIf='notesReady'>
+                          <p *ngIf="!preview" class="d-inline">Notes have been generated.(You can preview notes before downloading.)</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <button *ngIf="!preview" mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+                            color='accent' type="button" (click)='previewDoc()'>&nbsp;&nbsp; Preview Notes&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <ngx-doc-viewer *ngIf="preview" [url]='link' viewer="google" style="width:100%;height:50vh;"></ngx-doc-viewer>
                             <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                            color='accent' type="submit">Download Notes</button>
+                            color='accent' type="button" (click)='downloadNotes()' >Download Notes</button>
                     </div>
                   </form>
                   <hr>
@@ -201,4 +212,6 @@
       </div>
     </div>
   </div>
+
 </div>
+

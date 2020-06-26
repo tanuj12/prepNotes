@@ -76,10 +76,12 @@
     "angular-bootstrap-md": "^9.1.0",
     "chart.js": "2.8.0",
     "core-js": "3.6.4",
+    "ngx-doc-viewer": "^1.1.0",
     "ngx-dropzone": "^2.2.2",
     "ngx-extended-pdf-viewer": "^3.0.0-beta.7",
     "ngx-toastr": "10.0.4",
     "rxjs": "6.5.2",
+    "safe-pipe": "^1.0.3",
     "tslib": "1.10.0",
     "zone.js": "0.10.2"
   },

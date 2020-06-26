@@ -23,6 +23,7 @@ import {MatCardModule} from '@angular/material/card';
 import { LoginComponent } from './pages/login/login.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RegisterComponent } from './pages/register/register.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -40,7 +41,7 @@ import { RegisterComponent } from './pages/register/register.component';
     NgxExtendedPdfViewerModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, HomePageComponent, DashboardComponent, NoteQComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, AdminLayoutComponent],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })

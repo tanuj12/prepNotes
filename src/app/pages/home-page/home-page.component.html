@@ -27,8 +27,8 @@
                 <div class="row">
                   <div class="col-2 col-sm-0 col-md-2 col-lg-3 "></div>
                   <div class="col-8 col-sm-10 col-md-10 col-lg-9 d-inline">
-                    <app-register></app-register>
-                    <app-login></app-login>
+                    <app-register *ngIf="!status && !status2"></app-register>
+                    <app-login *ngIf="!status &&!status2"></app-login>
                   </div>
                 </div>
                 <br>

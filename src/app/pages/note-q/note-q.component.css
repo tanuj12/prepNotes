@@ -10,3 +10,7 @@ mat-form-field {
   height: 20px;
   width: 20px;
 }
+mat-spinner {
+  size: 5px;
+  margin: auto;
+}
