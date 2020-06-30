@@ -2,7 +2,6 @@ import { Component, OnInit, Pipe} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FeaturesService } from 'src/app/services/features.service';
 import { interval, Subscription } from 'rxjs';
-import { PRIMARY_OUTLET } from '@angular/router';
 @Component({
   selector: 'app-note-q',
   templateUrl: './note-q.component.html',
@@ -17,16 +16,24 @@ export class NoteQComponent implements OnInit {
   public waitingForDownload = false;
   private a: Subscription;
   public link:any;
-  public primary="primary";
   public uploadingSpinner = false;
   public preview = false;
+  public answerReady = true;
+  private AnswerReadyListenerSub: Subscription;
   constructor(private featureService: FeaturesService) { }
   notesForm: FormGroup;
+  questionForm: FormGroup;
   uploaded: boolean = false;
-
+  qNa:{
+    question: string;
+    answer: string;
+  } []= [];
   ngOnInit(): void {
     this.notesForm = new FormGroup({
       name: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
+    });
+    this.questionForm = new FormGroup({
+      question: new FormControl(null, {validators: [Validators.required, Validators.minLength(3)]}),
     });
   }
 
@@ -44,12 +51,13 @@ export class NoteQComponent implements OnInit {
   uploadDoc(){
     this.uploaded = false
     this.uploadingSpinner = true
-    this.featureService.upload(this.files)
+    this.a =this.featureService.upload(this.files)
     .subscribe((data) => {
       if(data.active === true){
         this.uploadingSpinner = false
         this.uploaded = true
         this.notesReady = false
+        this.a.unsubscribe()
       }
       console.log(data)
     })
@@ -72,7 +80,7 @@ export class NoteQComponent implements OnInit {
   }
 
   checkDownload() {
-    this.featureService.getDownloadReadystatus()
+  this.featureService.getDownloadReadystatus()
     .subscribe((ready) => {
         // this.downloadisReady = ready;
         if (ready.value === true) {
@@ -94,4 +102,44 @@ export class NoteQComponent implements OnInit {
   previewDoc(){
     this.preview = true
   }
+
+  question() {
+    if (this.questionForm.invalid) {
+      return;
+    }
+    this.answerReady = false
+    this.featureService.generateAnswer(this.questionForm.value.question)
+    .subscribe((data)=>{
+      console.log(data)
+    })
+    this.a = interval(3000).subscribe((x) => {
+      this.AnswerStatus();
+    });
+  }
+
+  AnswerStatus() {
+        this.featureService.getAnswerReadystatus(this.questionForm.value.question)
+        .subscribe((ready) => {
+          console.log(ready)
+            // this.downloadisReady = ready;
+            if (ready.value === true) {
+              const list: {question:string;answer:string} = {question: ready.question, answer: ready.answer};
+              let flag = 0;
+              let i = 0;
+              for (i = 0 ; i < this.qNa.length; i++) {
+                if ( this.qNa[i] === list) {
+                  flag = 1;
+                  break;
+                }
+              }
+              if ( flag === 0) {
+                this.qNa.unshift(list);
+              }
+              this.answerReady = true
+              console.log(this.qNa);
+              this.a.unsubscribe();
+              this.questionForm.reset();
+            }
+            });
+        };
 }

@@ -28,4 +28,14 @@ export class FeaturesService {
    getDownloadReadystatus() {
       return this.http.get<{value: boolean, message: string}>('http://localhost:5000/features/DownloadStatus')
    }
+
+   generateAnswer(question:string) {
+    let body={question}
+      return this.http.post<{value:boolean, message: string}>('http://localhost:5000/features/generateAnswer',body)
+   }
+
+   getAnswerReadystatus(question:string) {
+    let body={question}
+    return this.http.post<{value: boolean, question: string, answer:string}>('http://localhost:5000/features/answerStatus',body)
+   }
 }
