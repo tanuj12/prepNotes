@@ -29,7 +29,9 @@ export class DashboardComponent implements OnInit {
   }
 
   download(url:string) {
-    console.log(url)
+    if(url != null) {
+      window.open(url);
+    }
   }
 
   ngAfterViewInit() {
