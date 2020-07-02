@@ -38,4 +38,8 @@ export class FeaturesService {
     let body={question}
     return this.http.post<{value: boolean, question: string, answer:string}>('http://localhost:5000/features/answerStatus',body)
    }
+
+   getNotesLinks(){
+     return this.http.get<any>('http://localhost:5000/features/allNotesLink')
+   }
 }

@@ -13,7 +13,7 @@ import { UserComponent } from "../../pages/user/user.component";
 import { TablesComponent } from "../../pages/tables/tables.component";
 import { TypographyComponent } from "../../pages/typography/typography.component";
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
-
+import { ButtonsModule,CardsModule,CarouselModule, WavesModule } from 'angular-bootstrap-md'
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { DashboardComponent } from 'src/app/pages/dashboard/dashboard.component';
 import { NoteQComponent } from 'src/app/pages/note-q/note-q.component';
@@ -42,6 +42,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     NgbModule,
     NgxDocViewerModule,
     MatProgressSpinnerModule,
+    CarouselModule,
+    WavesModule,
+    CardsModule,
+    ButtonsModule
   ],
   declarations: [
     DashboardComponentOld,
