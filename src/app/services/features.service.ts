@@ -42,4 +42,8 @@ export class FeaturesService {
    getNotesLinks(){
      return this.http.get<any>('http://localhost:5000/features/allNotesLink')
    }
+
+   getAllQuestions(){
+    return this.http.get<any>('http://localhost:5000/features/allQuestions')
+   }
 }
