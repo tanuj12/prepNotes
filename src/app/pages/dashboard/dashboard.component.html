@@ -44,7 +44,7 @@
             <div class=" col-sm-6 text-left">
             </div>
             <div class="card-body">
-              <div style="border: 1px solid #e0e0e0;">
+              <div *ngIf='qNa.length' style="border: 1px solid #e0e0e0;">
                 <!--****** agron slider -->
                 <mat-expansion-panel *ngFor='let q of qNa' >
                   <mat-expansion-panel-header>
@@ -52,19 +52,11 @@
                   </mat-expansion-panel-header>
                  {{q.answer}}
                 </mat-expansion-panel>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br><br>
-                <br>
+              </div>
+              <div *ngIf="!qNa.length" style="border: 1px solid #e0e0e0;">
+                <h3 class="card-title">No questions asked.</h3>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -83,8 +75,8 @@
             </div>
             <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
             </div>
-            <div class="card" style="padding: 10px;">
-              <div style="border: 1px solid #e0e0e0;">
+            <div class="card" style="padding: 14px;">
+              <div *ngIf="slides.length" style="border: 1px solid #e0e0e0;">
                 <!--****** agron slider -->
                 <mdb-carousel class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
                 [animation]="'slide'" [interval]="'0'">
@@ -106,6 +98,10 @@
                     </mdb-carousel-item>
                   </mdb-carousel>
               </div>
+              <div *ngIf="!slides.length" style="border: 1px solid #e0e0e0;">
+                <h3 class="card-title">No notes generated.</h3>
+              </div>
+
             </div>
 
           </div>

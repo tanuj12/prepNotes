@@ -40,6 +40,7 @@
         z-index: 4;
         position: relative;
         overflow: auto;
+        background-color: #a0522d;
 
         .dropdown .dropdown-backdrop{
           display: none !important;
@@ -268,7 +269,7 @@
         position: relative;
         padding: $padding-base-vertical $padding-base-horizontal;
         z-index: 4;
-
+        background-color: #994d00;
         a.logo-mini,
         a.logo-normal{
             @extend .animation-transition-general;

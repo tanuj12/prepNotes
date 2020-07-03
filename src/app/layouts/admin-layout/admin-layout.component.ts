@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./admin-layout.component.scss"]
 })
 export class AdminLayoutComponent implements OnInit {
-  public sidebarColor: string = "blue";
+  public sidebarColor: string = "#994d00";
 
   constructor() {
     var body = document.getElementsByTagName('body')[0];
@@ -18,7 +18,7 @@ export class AdminLayoutComponent implements OnInit {
     var sidebar = document.getElementsByClassName('sidebar')[0];
     var mainPanel = document.getElementsByClassName('main-panel')[0];
 
-    this.sidebarColor = color;
+    this.sidebarColor = '#99fd00';
 
     if(sidebar != undefined){
         sidebar.setAttribute('data',color);
@@ -39,7 +39,7 @@ export class AdminLayoutComponent implements OnInit {
   ngOnInit() {
     var sidebar = document.getElementsByClassName('sidebar')[0];
     if(sidebar != undefined){
-      sidebar.setAttribute('data','blue');
+      sidebar.setAttribute('data','#994d00');
   }
   }
 }
