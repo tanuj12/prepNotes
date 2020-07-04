@@ -40,7 +40,7 @@
         z-index: 4;
         position: relative;
         overflow: auto;
-        background-color: #a0522d;
+        background-color: #994d00;
 
         .dropdown .dropdown-backdrop{
           display: none !important;
@@ -311,7 +311,7 @@
         }
 
         .simple-text{
-            text-transform: uppercase;
+
             padding: $padding-base-vertical 0;
             display: block;
             white-space: nowrap;

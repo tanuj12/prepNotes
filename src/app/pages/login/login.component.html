@@ -1,2 +1,23 @@
-
-<button  type="button" class="btn btn-outline-primary btn-info btn-lg" (click)='open()'> &nbsp;&nbsp;&nbsp; Login&nbsp;&nbsp;&nbsp;</button>
+<style>
+  button{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border:.25px solid #f4c430;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    box-shadow: black;
+    color:#f4c430;
+    text-shadow: 4px 4px 5px #7c0a02, 0 0 25px #FFF98B, 0 0 5px saddlebrown;
+    font-size: 200%;
+    margin:2% 4%;
+    padding:1.5% 4%;
+  }
+  button:hover{
+    background-color: #994d00;
+    color:white;
+    border-radius: 2px;
+    border:2px solid #994d00;
+  }
+</style>
+<button  type="button" (click)='open()'>&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</button>
