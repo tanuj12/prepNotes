@@ -78,9 +78,9 @@
             <div class="card" style="padding: 14px;">
               <div *ngIf="slides.length" style="border: 1px solid #e0e0e0;">
                 <!--****** agron slider -->
-                <mdb-carousel class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
-                [animation]="'slide'" [interval]="'0'">
-                    <mdb-carousel-item *ngFor="let item of slides; let i = index">
+                <mdb-carousel   class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+                [animation]="'slide'" [interval]="'0'" load>
+                    <mdb-carousel-item  *ngFor="let item of slides; let i = index">
                       <div class="col-md-4 pb-2" *ngFor="let card of item; let cardIndex = index" style="border: 1px; padding: 10px;" >
                         <mdb-card class="my-1 h-100" >
                           <mdb-card-img [src]="card.downloadUrl" alt="Card image cap"></mdb-card-img>

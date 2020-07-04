@@ -28,6 +28,7 @@ import { AuthGuard } from 'src/app/guards/auth-guard.service';
 import { SafePipe } from 'src/app/pipes/safePipe';
 import {NgxDocViewerModule} from 'ngx-doc-viewer';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { loadDirective} from '../../directives/load-carousel.directive'
 @NgModule({
   imports: [
     CommonModule,
@@ -62,7 +63,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     TypographyComponent,
     NotificationsComponent,
     MapComponent,
-    SafePipe
+    SafePipe,
+    loadDirective
     // RtlComponent
   ],
   providers: [AuthGuard]

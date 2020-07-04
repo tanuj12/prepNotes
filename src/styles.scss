@@ -5,9 +5,6 @@
     flex-wrap: wrap
   }
 }
-mdb-carousel .carousel-indicators {
-  display: none;
-}
 mdb-carousel .carousel-multi-item .controls-top .btn-floating {
   color: black;
   padding-left: 5px;
@@ -17,8 +14,12 @@ mdb-carousel .carousel-multi-item .controls-top .btn-floating {
   z-index: 2;
   background:white;
 }
-
 mdb-carousel .fas{
   padding-top: 15px;
   size: 50px;
 }
+mdb-carousel .carousel-indicators {
+  display: none;
+}
+
+
