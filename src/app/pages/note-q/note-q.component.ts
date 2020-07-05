@@ -20,6 +20,8 @@ export class NoteQComponent implements OnInit {
   public preview = false;
   public answerReady = true;
   private AnswerReadyListenerSub: Subscription;
+  public notGlobal: boolean =true;
+  public settingG: boolean =false;
   constructor(private featureService: FeaturesService) { }
   notesForm: FormGroup;
   questionForm: FormGroup;
@@ -66,6 +68,7 @@ export class NoteQComponent implements OnInit {
 
   generateNotes(){
     this.waitingForDownload =true
+    this.notGlobal = true
     if (this.notesForm.invalid) {
       return;
     }
@@ -118,28 +121,54 @@ export class NoteQComponent implements OnInit {
   }
 
   AnswerStatus() {
-        this.featureService.getAnswerReadystatus(this.questionForm.value.question)
-        .subscribe((ready) => {
-          console.log(ready)
-            // this.downloadisReady = ready;
-            if (ready.value === true) {
-              const list: {question:string;answer:string} = {question: ready.question, answer: ready.answer};
-              let flag = 0;
-              let i = 0;
-              for (i = 0 ; i < this.qNa.length; i++) {
-                if ( this.qNa[i] === list) {
-                  flag = 1;
-                  break;
-                }
-              }
-              if ( flag === 0) {
-                this.qNa.unshift(list);
-              }
-              this.answerReady = true
-              console.log(this.qNa);
-              this.a.unsubscribe();
-              this.questionForm.reset();
-            }
-            });
-        };
+    this.featureService.getAnswerReadystatus(this.questionForm.value.question)
+    .subscribe((ready) => {
+      console.log(ready)
+      // this.downloadisReady = ready;
+      if (ready.value === true) {
+        const list: {question:string;answer:string} = {question: ready.question, answer: ready.answer};
+        let flag = 0;
+        let i = 0;
+        for (i = 0 ; i < this.qNa.length; i++) {
+          if ( this.qNa[i] === list) {
+            flag = 1;
+            break;
+          }
+        }
+        if ( flag === 0) {
+          this.qNa.unshift(list);
+        }
+        this.answerReady = true
+        console.log(this.qNa);
+        this.a.unsubscribe();
+        this.questionForm.reset();
+      }
+    });
+  };
+
+  setGlobal() {
+    this.settingG =true
+    this.featureService.setGlobal(this.link)
+    .subscribe((value)=>{
+      if(value.value=== true){
+        this.settingG = false
+        this.notGlobal = false
+      } else {
+        this.settingG = false
+      }
+    })
+  }
+
+  setNotGlobal(){
+    this.settingG = true
+    this.featureService.unsetGlobal(this.link)
+    .subscribe((value)=>{
+      if(value.value === true) {
+        this.settingG = false
+        this.notGlobal = true
+      } else {
+        this.settingG = false
+      }
+    })
+  }
 }

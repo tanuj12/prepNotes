@@ -92,6 +92,14 @@
                           </mdb-card-body>
                           <mdb-card-footer>
                             <a href="#" mdbBtn color="primary" class="waves-light" (click)='download(card.downloadUrl)' mdbWavesEffect>Download</a>
+                            <button *ngIf="!card.Global && !settingG " mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+                            color='accent' type="button" (click)='setGlobal(card.downloadUrl)' >Add To Global Notes</button>
+                            <button *ngIf="card.Global && !settingG" mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+                            color='accent' type="button" (click)='setNotGlobal(card.downloadUrl)' >Remove from Global Notes</button>
+                            <button *ngIf="!card.Global && settingG" disabled mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+                            color='accent' type="button" (click)='setGlobal()' >Add To Global Notes</button>
+                            <button *ngIf="card.Global && settingG" disabled mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+                            color='accent' type="button" (click)='setNotGlobal()' >Remove from Global Notes</button>
                           </mdb-card-footer>
                         </mdb-card>
                       </div>
@@ -110,30 +118,41 @@
     </div>
   </div>
 
-
   <div class=" row">
     <div class=" col-12">
-      <div class=" card ">
+      <div class="card">
         <div class=" card-header">
           <div class=" row">
-            <div class=" col-sm-6 text-left">
-              <h2 class=" card-title">Recently viewed Videos</h2>
+            <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
+              <h2 class=" card-title">Global Notes</h2>
             </div>
-            <div class=" col-sm-6 text-left">
+            <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
             </div>
-            <div class="card-body">
-              <div style="border: 1px solid #e0e0e0;">
+            <div class="card" style="padding: 14px;">
+              <div *ngIf="gNotes.length" style="border: 1px solid #e0e0e0;">
                 <!--****** agron slider -->
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br><br>
-                <br>
+                <mdb-carousel   class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+                [animation]="'slide'" [interval]="'0'" load>
+                    <mdb-carousel-item  *ngFor="let item of gNotes; let i = index">
+                      <div class="col-md-4 pb-2" *ngFor="let card of item; let cardIndex = index" style="border: 1px; padding: 10px;" >
+                        <mdb-card class="my-1 h-100" >
+                          <mdb-card-img [src]="card.downloadUrl" alt="Card image cap"></mdb-card-img>
+                          <mdb-card-body>
+                            <mdb-card-title>
+                              <h4>{{card.Name}}</h4>
+                            </mdb-card-title>
+                            <p>{{card.DateAndTime}}</p>
+                          </mdb-card-body>
+                          <mdb-card-footer>
+                            <a href="#" mdbBtn color="primary" class="waves-light" (click)='download(card.downloadUrl)' mdbWavesEffect>Download</a>
+                          </mdb-card-footer>
+                        </mdb-card>
+                      </div>
+                    </mdb-carousel-item>
+                  </mdb-carousel>
+              </div>
+              <div *ngIf="!gNotes.length" style="border: 1px solid #e0e0e0;">
+                <h3 class="card-title">No Global notes Available.</h3>
               </div>
             </div>
 

@@ -22,7 +22,7 @@ ngOnInit(){
     this.renderer.setStyle(controls.children[1], 'top', '50%');
 
     this.renderer.setStyle(controls.children[1], 'left', '99%');
-  }, 340);
+  }, 1000);
 
 
 }

@@ -30,8 +30,8 @@ prevUrl:string
       console.log('it should be here')
     this._authService.checkUser()
     return this._authService.getUser().pipe(tap((isLoggedIn:boolean) => {
-      console.log(isLoggedIn)
-      if (!isLoggedIn) {
+      console.log("this"+isLoggedIn)
+      if (!isLoggedIn ) {
 
         NgbdModalContent.url = state.url
         console.log('goin to '+NgbdModalContent.url)

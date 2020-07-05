@@ -46,4 +46,18 @@ export class FeaturesService {
    getAllQuestions(){
     return this.http.get<any>('http://localhost:5000/features/allQuestions')
    }
+
+   setGlobal(link:string){
+    let body={link}
+    return this.http.post<{value: boolean, message:string}>('http://localhost:5000/features/setGlobal',body)
+   }
+
+   unsetGlobal(link:string) {
+    let body={link}
+    return this.http.post<{value: boolean, message:string}>('http://localhost:5000/features/unsetGlobal',body)
+   }
+
+   getGlobalNotesLinks(){
+    return this.http.get<any>('http://localhost:5000/features/allGlobalNotesLink')
+   }
 }

@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit {
     this.userStatus = this.authService.getUser()
     .subscribe((status)=>{
 
-      this.status = status
+      this.status2 = status
     })
     // this.authService.checkUser()
 

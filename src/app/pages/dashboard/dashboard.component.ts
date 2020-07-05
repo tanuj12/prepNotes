@@ -7,9 +7,11 @@ import { FeaturesService } from 'src/app/services/features.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  cards = [{}];
   slides: any = [[]];
+  gNotes: any = [[]];
   qNa:[]= [];
+  public settingG: boolean =false;
+
   chunk(arr, chunkSize) {
     let R = [];
     for (let i = 0, len = arr.length; i < len; i += chunkSize) {
@@ -24,14 +26,18 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.featureService.getNotesLinks()
     .subscribe((data)=>{
-      this.cards = data.links
-      console.log(this.cards)
-      this.slides = this.chunk(this.cards, 3);
+      this.slides = this.chunk(data.links, 3);
     })
 
     this.featureService.getAllQuestions()
     .subscribe((data)=>{
       this.qNa=data.qna
+    })
+
+    this.featureService.getGlobalNotesLinks()
+    .subscribe((data)=>{
+      console.log(data)
+      this.gNotes = this.chunk(data.links, 3);
     })
   }
 
@@ -39,5 +45,52 @@ export class DashboardComponent implements OnInit {
     if(url != null) {
       window.open(url);
     }
+  }
+
+  setGlobal(link) {
+    this.settingG =true
+    this.featureService.setGlobal(link)
+    .subscribe((value)=>{
+      if(value.value=== true){
+
+        this.featureService.getNotesLinks()
+        .subscribe((data)=>{
+          this.slides = this.chunk(data.links, 3);
+
+
+          this.featureService.getGlobalNotesLinks()
+          .subscribe((data)=>{
+            console.log(data)
+            this.gNotes = this.chunk(data.links, 3);
+            this.settingG = false
+          })
+
+        })
+      } else {
+        this.settingG = false
+      }
+    })
+  }
+
+  setNotGlobal(link){
+    this.settingG = true
+    this.featureService.unsetGlobal(link)
+    .subscribe((value)=>{
+      if(value.value === true) {
+
+        this.featureService.getNotesLinks()
+        .subscribe((data)=>{
+          this.slides = this.chunk(data.links, 3);
+          this.featureService.getGlobalNotesLinks()
+          .subscribe((data)=>{
+            console.log(data)
+            this.gNotes = this.chunk(data.links, 3);
+            this.settingG = false
+          })
+        })
+      } else {
+        this.settingG = false
+      }
+    })
   }
 }
