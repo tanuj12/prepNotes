@@ -31,6 +31,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { loadDirective} from '../../directives/load-carousel.directive'
 import { AboutusComponent } from 'src/app/pages/aboutus/aboutus.component';
 import { QuizComponent } from 'src/app/pages/quiz/quiz.component';
+import { VideoLinksComponent } from 'src/app/pages/video-links/video-links.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -69,7 +70,8 @@ import { QuizComponent } from 'src/app/pages/quiz/quiz.component';
     SafePipe,
     loadDirective,
     AboutusComponent,
-    QuizComponent
+    QuizComponent,
+    VideoLinksComponent
     // RtlComponent
   ],
   providers: [AuthGuard]

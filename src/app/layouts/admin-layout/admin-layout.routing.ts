@@ -13,10 +13,12 @@ import { NoteQComponent } from 'src/app/pages/note-q/note-q.component';
 import { AuthGuard } from 'src/app/guards/auth-guard.service';
 import { AboutusComponent } from 'src/app/pages/aboutus/aboutus.component';
 import { QuizComponent } from 'src/app/pages/quiz/quiz.component';
+import { VideoLinksComponent } from 'src/app/pages/video-links/video-links.component';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 export const AdminLayoutRoutes: Routes = [
   { path: "aboutus", component: AboutusComponent},
   { path: "quiz", component: QuizComponent },
+  { path: "videoLinks", component: VideoLinksComponent, canActivate: [AuthGuard] },
   { path: "dashboardOld", component: DashboardComponentOld},
   { path: "homePage", component: HomePageComponent },
   { path: "notes", component: NoteQComponent , canActivate: [AuthGuard]},

@@ -60,4 +60,10 @@ export class FeaturesService {
    getGlobalNotesLinks(){
     return this.http.get<any>('http://localhost:5000/features/allGlobalNotesLink')
    }
+
+   videoLinks(keyWord:string){
+     console.log('here')
+    let body={keyWord}
+    return this.http.post<any>('http://localhost:5000/features/videoSearch',body)
+   }
 }

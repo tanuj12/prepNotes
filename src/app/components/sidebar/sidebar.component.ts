@@ -14,6 +14,12 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
+    path: "/videoLinks",
+    title: "Video Links",
+    icon: "icon-chart-pie-36",
+    class: ""
+  },
+  {
     path: "/quiz",
     title: "Quiz",
     icon: "icon-chart-pie-36",
