@@ -11,8 +11,12 @@ import { HomePageComponent } from 'src/app/pages/home-page/home-page.component';
 import { DashboardComponent } from 'src/app/pages/dashboard/dashboard.component';
 import { NoteQComponent } from 'src/app/pages/note-q/note-q.component';
 import { AuthGuard } from 'src/app/guards/auth-guard.service';
+import { AboutusComponent } from 'src/app/pages/aboutus/aboutus.component';
+import { QuizComponent } from 'src/app/pages/quiz/quiz.component';
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 export const AdminLayoutRoutes: Routes = [
+  { path: "aboutus", component: AboutusComponent},
+  { path: "quiz", component: QuizComponent },
   { path: "dashboardOld", component: DashboardComponentOld},
   { path: "homePage", component: HomePageComponent },
   { path: "notes", component: NoteQComponent , canActivate: [AuthGuard]},

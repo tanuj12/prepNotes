@@ -29,6 +29,8 @@ import { SafePipe } from 'src/app/pipes/safePipe';
 import {NgxDocViewerModule} from 'ngx-doc-viewer';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { loadDirective} from '../../directives/load-carousel.directive'
+import { AboutusComponent } from 'src/app/pages/aboutus/aboutus.component';
+import { QuizComponent } from 'src/app/pages/quiz/quiz.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -46,7 +48,8 @@ import { loadDirective} from '../../directives/load-carousel.directive'
     CarouselModule,
     WavesModule,
     CardsModule,
-    ButtonsModule
+    ButtonsModule,
+
   ],
   declarations: [
     DashboardComponentOld,
@@ -64,7 +67,9 @@ import { loadDirective} from '../../directives/load-carousel.directive'
     NotificationsComponent,
     MapComponent,
     SafePipe,
-    loadDirective
+    loadDirective,
+    AboutusComponent,
+    QuizComponent
     // RtlComponent
   ],
   providers: [AuthGuard]

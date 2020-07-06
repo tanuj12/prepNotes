@@ -43,7 +43,7 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     NgxExtendedPdfViewerModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, QuizComponent, AboutusComponent],
+  declarations: [AppComponent, AdminLayoutComponent],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })
