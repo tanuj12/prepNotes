@@ -24,6 +24,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RegisterComponent } from './pages/register/register.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { QuizComponent } from './pages/quiz/quiz.component';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -41,7 +43,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     NgxExtendedPdfViewerModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent],
+  declarations: [AppComponent, AdminLayoutComponent, QuizComponent, AboutusComponent],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })
