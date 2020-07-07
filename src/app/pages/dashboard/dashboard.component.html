@@ -33,7 +33,7 @@
   </div>
 
 
-  <div class=" row">
+  <div class=" row" >
     <div class=" col-12">
       <div class=" card ">
         <div class=" card-header">
@@ -43,15 +43,27 @@
             </div>
             <div class=" col-sm-6 text-left">
             </div>
-            <div class="card-body">
+            <div class="card-body" >
               <div *ngIf='qNa.length' style="border: 1px solid #e0e0e0;">
                 <!--****** agron slider -->
-                <mat-expansion-panel *ngFor='let q of qNa' >
+                <mat-expansion-panel *ngFor='let q of qNa | paginate: {id:"some", itemsPerPage: 5, currentPage: p, totalItems:qNa.length }' >
                   <mat-expansion-panel-header>
                     {{q.question}}
                   </mat-expansion-panel-header>
                  {{q.answer}}
                 </mat-expansion-panel>
+                <pagination-controls  id="some"
+                      maxSize="9"
+                      (pageChange)="p = $event"
+                      directionLinks="true"
+                      autoHide="true"
+                      responsive="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+</pagination-controls>
               </div>
               <div *ngIf="!qNa.length" style="border: 1px solid #e0e0e0;">
                 <h3 class="card-title">No questions asked.</h3>
@@ -79,7 +91,7 @@
               <div *ngIf="slides.length" style="border: 1px solid #e0e0e0;">
                 <!--****** agron slider -->
                 <mdb-carousel   class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
-                [animation]="'slide'" [interval]="'0'" load>
+                [animation]="'slide'" [interval]="'0'">
                     <mdb-carousel-item  *ngFor="let item of slides; let i = index">
                       <div class="col-md-4 pb-2" *ngFor="let card of item; let cardIndex = index" style="border: 1px; padding: 10px;" >
                         <mdb-card class="my-1 h-100" >
@@ -132,7 +144,7 @@
               <div *ngIf="gNotes.length" style="border: 1px solid #e0e0e0;">
                 <!--****** agron slider -->
                 <mdb-carousel   class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
-                [animation]="'slide'" [interval]="'0'" load>
+                [animation]="'slide'" [interval]="'0'" >
                     <mdb-carousel-item  *ngFor="let item of gNotes; let i = index">
                       <div class="col-md-4 pb-2" *ngFor="let card of item; let cardIndex = index" style="border: 1px; padding: 10px;" >
                         <mdb-card class="my-1 h-100" >

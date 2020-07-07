@@ -28,9 +28,9 @@ import { AuthGuard } from 'src/app/guards/auth-guard.service';
 import { SafePipe } from 'src/app/pipes/safePipe';
 import {NgxDocViewerModule} from 'ngx-doc-viewer';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { loadDirective} from '../../directives/load-carousel.directive'
 import { AboutusComponent } from 'src/app/pages/aboutus/aboutus.component';
 import { QuizComponent } from 'src/app/pages/quiz/quiz.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { VideoLinksComponent } from 'src/app/pages/video-links/video-links.component';
 @NgModule({
   imports: [
@@ -50,6 +50,7 @@ import { VideoLinksComponent } from 'src/app/pages/video-links/video-links.compo
     WavesModule,
     CardsModule,
     ButtonsModule,
+    NgxPaginationModule
 
   ],
   declarations: [
@@ -68,7 +69,6 @@ import { VideoLinksComponent } from 'src/app/pages/video-links/video-links.compo
     NotificationsComponent,
     MapComponent,
     SafePipe,
-    loadDirective,
     AboutusComponent,
     QuizComponent,
     VideoLinksComponent

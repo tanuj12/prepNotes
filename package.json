@@ -79,6 +79,7 @@
     "ngx-doc-viewer": "^1.1.0",
     "ngx-dropzone": "^2.2.2",
     "ngx-extended-pdf-viewer": "^3.0.0-beta.7",
+    "ngx-pagination": "^5.0.0",
     "ngx-toastr": "10.0.4",
     "rxjs": "6.5.2",
     "safe-pipe": "^1.0.3",

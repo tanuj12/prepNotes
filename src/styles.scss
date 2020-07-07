@@ -22,4 +22,14 @@ mdb-carousel .carousel-indicators {
   display: none;
 }
 
+mdb-carousel .controls-top>a:first-child{
+  position: absolute;
+  top: 50%;
+  right: 99%;
+}
 
+mdb-carousel .controls-top>a:nth-child(2){
+  position: absolute;
+  top: 50%;
+  left: 99%;
+}
