@@ -24,7 +24,6 @@ export class VideoLinksComponent implements OnInit {
     }
     this.featureService.videoLinks(this.serach.value.keyword)
     .subscribe((data)=>{
-      console.log(data.list)
       this.links=data.list
     })
   }
