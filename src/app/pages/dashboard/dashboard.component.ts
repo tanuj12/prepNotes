@@ -8,9 +8,11 @@ import { FeaturesService } from 'src/app/services/features.service';
 })
 export class DashboardComponent implements OnInit {
   slides: any = [[]];
+  list:any=[]
   gNotes: any = [[]];
   qNa:[]= [];
-  quizAll=[]
+  quizAll=[];
+  searchText:string
   p =1;
   public settingG: boolean =false;
 
@@ -39,6 +41,7 @@ export class DashboardComponent implements OnInit {
     this.featureService.getGlobalNotesLinks()
     .subscribe((data)=>{
       console.log(data)
+      this.list = data.links
       this.gNotes = this.chunk(data.links, 3);
     })
 
@@ -71,6 +74,7 @@ export class DashboardComponent implements OnInit {
           this.featureService.getGlobalNotesLinks()
           .subscribe((data)=>{
             console.log(data)
+            this.list = data.links
             this.gNotes = this.chunk(data.links, 3);
             this.settingG = false
           })
@@ -94,6 +98,7 @@ export class DashboardComponent implements OnInit {
           this.featureService.getGlobalNotesLinks()
           .subscribe((data)=>{
             console.log(data)
+            this.list = data.links
             this.gNotes = this.chunk(data.links, 3);
             this.settingG = false
           })

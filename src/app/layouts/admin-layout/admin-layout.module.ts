@@ -34,6 +34,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { VideoLinksComponent } from 'src/app/pages/video-links/video-links.component';
 import {MatSelectModule} from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { FilterPipe } from 'src/app/pipes/filter.pipe';
 @NgModule({
   imports: [
     CommonModule,
@@ -76,7 +77,8 @@ import { MatOptionModule } from '@angular/material/core';
     SafePipe,
     AboutusComponent,
     QuizComponent,
-    VideoLinksComponent
+    VideoLinksComponent,
+    FilterPipe
     // RtlComponent
   ],
   providers: [AuthGuard]

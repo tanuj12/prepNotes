@@ -28,6 +28,7 @@ import { QuizComponent } from './pages/quiz/quiz.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { VideoLinksComponent } from './pages/video-links/video-links.component';
 import {MatSelectModule} from '@angular/material/select';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   imports: [

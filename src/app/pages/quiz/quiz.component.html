@@ -10,6 +10,7 @@
       <div class="dropdown-menu dropdown-primary">
         <a class="dropdown-item" (click)='setCateg("Basic General Knowledge")'>General</a>
         <a class="dropdown-item" (click)='setCateg("Indian Politics")'>Indian Politics</a>
+        <a class="dropdown-item" (click)='setCateg("Technology")'>Technology</a>
       </div>
     </div>
   </div>
@@ -24,55 +25,55 @@
     </ng-container>
     <br>
     <hr>
-    <h4>2. {{list[0].question}}</h4>
+    <h4>2. {{list[1].question}}</h4>
     <ng-container *ngFor="let option of list[1].options">
       <input formControlName='ans2' type="radio" [value]='option'> {{ option }}<br/>
     </ng-container>
     <br>
     <hr>
-    <h4>3. {{list[0].question}}</h4>
+    <h4>3. {{list[2].question}}</h4>
     <ng-container *ngFor="let option of list[2].options">
       <input formControlName='ans3' type="radio" [value]='option'> {{ option }}<br/>
     </ng-container>
     <br>
     <hr>
-    <h4>4. {{list[0].question}}</h4>
+    <h4>4. {{list[3].question}}</h4>
     <ng-container *ngFor="let option of list[3].options">
       <input formControlName='ans4' type="radio" [value]='option'> {{ option }}<br/>
     </ng-container>
     <br>
     <hr>
-    <h4>5. {{list[0].question}}</h4>
+    <h4>5. {{list[4].question}}</h4>
     <ng-container *ngFor="let option of list[4].options">
       <input formControlName='ans5' type="radio" [value]='option'> {{ option }}<br/>
     </ng-container>
     <br>
     <hr>
-    <h4>6.{{list[0].question}}</h4>
+    <h4>6.{{list[5].question}}</h4>
     <ng-container *ngFor="let option of list[5].options">
       <input formControlName='ans6' type="radio" [value]='option'> {{ option }}<br/>
     </ng-container>
     <br>
     <hr>
-    <h4>7. {{list[0].question}}</h4>
+    <h4>7. {{list[6].question}}</h4>
     <ng-container *ngFor="let option of list[6].options">
       <input formControlName='ans7' type="radio" [value]='option'> {{ option }}<br/>
     </ng-container>
     <br>
     <hr>
-    <h4>8. {{list[0].question}}</h4>
+    <h4>8. {{list[7].question}}</h4>
     <ng-container *ngFor="let option of list[7].options">
       <input formControlName='ans8' type="radio" [value]='option'> {{ option }}<br/>
     </ng-container>
     <br>
     <hr>
-    <h4>9. {{list[0].question}}</h4>
+    <h4>9. {{list[8].question}}</h4>
     <ng-container *ngFor="let option of list[8].options">
       <input formControlName='ans9' type="radio" [value]='option'> {{ option }}<br/>
     </ng-container>
     <br>
     <hr>
-    <h4>10. {{list[0].question}}</h4>
+    <h4>10. {{list[9].question}}</h4>
     <ng-container *ngFor="let option of list[9].options">
       <input formControlName='ans10' type="radio" [value]='option'> {{ option }}<br/>
     </ng-container>

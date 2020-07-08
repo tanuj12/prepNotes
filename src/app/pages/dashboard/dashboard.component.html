@@ -140,12 +140,22 @@
             </div>
             <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
             </div>
+
             <div class="card" style="padding: 14px;">
+
               <div *ngIf="gNotes.length" style="border: 1px solid #e0e0e0;">
                 <!--****** agron slider -->
+
+                <div class="md-form mt-0 form-inline" style="width: 100%;">
+                  <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon>
+                  <input  [(ngModel)]="searchText" class="form-control mr-sm-2 ml-3" type="text" placeholder="Search" style="width:95%;">
+                </div>
+                <div *ngIf="!(list|filter:searchText).length">
+                  <h4>No Files with that name</h4>
+                </div>
                 <mdb-carousel   class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
                 [animation]="'slide'" [interval]="'0'" >
-                    <mdb-carousel-item  *ngFor="let item of gNotes; let i = index">
+                    <mdb-carousel-item  *ngFor="let item of list|filter:searchText; let i = index">
                       <div class="col-md-4 pb-2" *ngFor="let card of item; let cardIndex = index" style="border: 1px; padding: 10px;" >
                         <mdb-card class="my-1 h-100" >
                           <mdb-card-img [src]="card.downloadUrl" alt="Card image cap"></mdb-card-img>
@@ -188,7 +198,7 @@
                 <tr>
                   <th>Number</th>
                   <th>Category</th>
-                  <th>Max</th>
+                  <th class=" text-center">Max</th>
                   <th class=" text-center">Score</th>
                 </tr>
               </thead>
@@ -196,7 +206,7 @@
                 <tr *ngFor="let item of quizAll">
                   <td>{{item.num}}</td>
                   <td>{{item.val.type}}</td>
-                  <td>10</td>
+                  <td class=" text-center">10</td>
                   <td class=" text-center">{{item.val.score}}</td>
                 </tr>
               </tbody>
