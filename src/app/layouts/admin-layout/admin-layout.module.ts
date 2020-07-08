@@ -13,7 +13,7 @@ import { UserComponent } from "../../pages/user/user.component";
 import { TablesComponent } from "../../pages/tables/tables.component";
 import { TypographyComponent } from "../../pages/typography/typography.component";
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
-import { ButtonsModule,CardsModule,CarouselModule, WavesModule } from 'angular-bootstrap-md'
+import { ButtonsModule,CardsModule,CarouselModule, WavesModule, MDBBootstrapModule } from 'angular-bootstrap-md'
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { DashboardComponent } from 'src/app/pages/dashboard/dashboard.component';
 import { NoteQComponent } from 'src/app/pages/note-q/note-q.component';
@@ -32,6 +32,8 @@ import { AboutusComponent } from 'src/app/pages/aboutus/aboutus.component';
 import { QuizComponent } from 'src/app/pages/quiz/quiz.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { VideoLinksComponent } from 'src/app/pages/video-links/video-links.component';
+import {MatSelectModule} from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 @NgModule({
   imports: [
     CommonModule,
@@ -50,8 +52,11 @@ import { VideoLinksComponent } from 'src/app/pages/video-links/video-links.compo
     WavesModule,
     CardsModule,
     ButtonsModule,
-    NgxPaginationModule
-
+    NgxPaginationModule,
+    MatSelectModule,
+    NgxDropzoneModule,
+    MDBBootstrapModule.forRoot(),
+    MatOptionModule
   ],
   declarations: [
     DashboardComponentOld,

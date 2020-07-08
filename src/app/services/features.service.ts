@@ -66,4 +66,17 @@ export class FeaturesService {
     let body={keyWord}
     return this.http.post<any>('http://localhost:5000/features/videoSearch',body)
    }
+   submitQuiz(submission,type){
+    let body={submission,type}
+    return this.http.post<any>('http://localhost:5000/features/submitQuiz',body)
+   }
+
+   getQuiz(type:string){
+    let body={type}
+    return this.http.post<any>('http://localhost:5000/features/getQuiz',body)
+   }
+
+   getAllQuiz(){
+    return this.http.get<any>('http://localhost:5000/features/allQuiz')
+   }
 }

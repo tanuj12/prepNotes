@@ -10,6 +10,8 @@ export class DashboardComponent implements OnInit {
   slides: any = [[]];
   gNotes: any = [[]];
   qNa:[]= [];
+  quizAll=[]
+  p =1;
   public settingG: boolean =false;
 
   chunk(arr, chunkSize) {
@@ -38,6 +40,14 @@ export class DashboardComponent implements OnInit {
     .subscribe((data)=>{
       console.log(data)
       this.gNotes = this.chunk(data.links, 3);
+    })
+
+    this.featureService.getAllQuiz()
+    .subscribe((data)=>{
+      if(data.value){
+        this.quizAll=data.quizAll
+        console.log(this.quizAll)
+      }
     })
   }
 

@@ -1,3 +1,230 @@
-<div class="content">
-  <p>quiz works!</p>
+<div class="content" >
+
+  <div class="row" *ngIf="!type">
+    <div class="btn-group" mdbDropdown>
+      <button mdbDropdownToggle type="button" mdbBtn color="primary" class="dropdown-toggle waves-light"
+        mdbWavesEffect>
+        Category
+      </button>
+
+      <div class="dropdown-menu dropdown-primary">
+        <a class="dropdown-item" (click)='setCateg("Basic General Knowledge")'>General</a>
+        <a class="dropdown-item" (click)='setCateg("Indian Politics")'>Indian Politics</a>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="type && !list.length">
+    <h4>Wait quiz is being loaded.....Please wait...</h4>
+  </div>
+  <div *ngIf='list.length'>
+  <form [formGroup]='quiz' *ngIf="!answer">
+    <h4>1. {{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[0].options">
+      <input formControlName='ans1' type="radio" [value]='option'> {{ option }}<br/>
+    </ng-container>
+    <br>
+    <hr>
+    <h4>2. {{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[1].options">
+      <input formControlName='ans2' type="radio" [value]='option'> {{ option }}<br/>
+    </ng-container>
+    <br>
+    <hr>
+    <h4>3. {{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[2].options">
+      <input formControlName='ans3' type="radio" [value]='option'> {{ option }}<br/>
+    </ng-container>
+    <br>
+    <hr>
+    <h4>4. {{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[3].options">
+      <input formControlName='ans4' type="radio" [value]='option'> {{ option }}<br/>
+    </ng-container>
+    <br>
+    <hr>
+    <h4>5. {{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[4].options">
+      <input formControlName='ans5' type="radio" [value]='option'> {{ option }}<br/>
+    </ng-container>
+    <br>
+    <hr>
+    <h4>6.{{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[5].options">
+      <input formControlName='ans6' type="radio" [value]='option'> {{ option }}<br/>
+    </ng-container>
+    <br>
+    <hr>
+    <h4>7. {{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[6].options">
+      <input formControlName='ans7' type="radio" [value]='option'> {{ option }}<br/>
+    </ng-container>
+    <br>
+    <hr>
+    <h4>8. {{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[7].options">
+      <input formControlName='ans8' type="radio" [value]='option'> {{ option }}<br/>
+    </ng-container>
+    <br>
+    <hr>
+    <h4>9. {{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[8].options">
+      <input formControlName='ans9' type="radio" [value]='option'> {{ option }}<br/>
+    </ng-container>
+    <br>
+    <hr>
+    <h4>10. {{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[9].options">
+      <input formControlName='ans10' type="radio" [value]='option'> {{ option }}<br/>
+    </ng-container>
+    <br>
+    <hr>
+    <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+    color='accent' type="button" (click)='submit()'>Submit Quiz</button>
+
+  </form>
+
+
+
+
+  <div *ngIf="answer">
+    <h4>Score: {{score}}/10</h4>
+    <br><br>
+    <h4>1.{{list[0].question}}</h4>
+    <ng-container *ngFor="let option of list[0].options">
+      <div *ngIf="option == quiz.value.ans1">
+        <input type="radio" checked> {{ option }}<br/>
+      </div>
+      <div *ngIf="!(option == quiz.value.ans1)">
+        <input  type="radio"> {{ option }}<br/>
+      </div>
+
+    </ng-container>
+    <h5 *ngIf="list[0].answer === quiz.value.ans1">Correct</h5>
+    <h5 *ngIf="!(list[0].answer === quiz.value.ans1)">Wrong- (Correct answer is {{list[0].answer}})</h5>
+    <hr>
+    <br>
+    <h4>2.{{list[1].question}}</h4>
+    <ng-container *ngFor="let option of list[1].options">
+      <div *ngIf="option == quiz.value.ans2">
+        <input type="radio" checked> {{ option }}<br/>
+      </div>
+      <div *ngIf="!(option == quiz.value.ans2)">
+        <input  type="radio"> {{ option }}<br/>
+      </div>
+    </ng-container>
+    <h5 *ngIf="list[1].answer === quiz.value.ans2">Correct</h5>
+    <h5 *ngIf="!(list[1].answer === quiz.value.ans2)">Wrong- (Correct answer is {{list[1].answer}})</h5>
+    <hr>
+    <br>
+    <h4>3.{{list[2].question}}</h4>
+    <ng-container *ngFor="let option of list[2].options">
+      <div *ngIf="option == quiz.value.ans3">
+        <input type="radio" checked> {{ option }}<br/>
+      </div>
+      <div *ngIf="!(option == quiz.value.ans3)">
+        <input  type="radio"> {{ option }}<br/>
+      </div>
+    </ng-container>
+    <h5 *ngIf="list[2].answer === quiz.value.ans3">Correct</h5>
+    <h5 *ngIf="!(list[2].answer === quiz.value.ans3)">Wrong- (Correct answer is {{list[2].answer}})</h5>
+    <hr>
+    <br>
+    <h4>4.{{list[3].question}}</h4>
+    <ng-container *ngFor="let option of list[3].options">
+      <div *ngIf="option == quiz.value.ans4">
+        <input type="radio" checked> {{ option }}<br/>
+      </div>
+      <div *ngIf="!(option == quiz.value.ans4)">
+        <input  type="radio"> {{ option }}<br/>
+      </div>
+    </ng-container>
+    <h5 *ngIf="list[3].answer === quiz.value.ans4">Correct</h5>
+    <h5 *ngIf="!(list[3].answer === quiz.value.ans4)">Wrong- (Correct answer is {{list[3].answer}})</h5>
+    <hr>
+    <br>
+    <h4>5.{{list[4].question}}</h4>
+    <ng-container *ngFor="let option of list[4].options">
+      <div *ngIf="option == quiz.value.ans5">
+        <input type="radio" checked> {{ option }}<br/>
+      </div>
+      <div *ngIf="!(option == quiz.value.ans5)">
+        <input  type="radio"> {{ option }}<br/>
+      </div>
+    </ng-container>
+    <h5 *ngIf="list[4].answer === quiz.value.ans5">Correct</h5>
+    <h5 *ngIf="!(list[4].answer === quiz.value.ans5)">Wrong- (Correct answer is {{list[4].answer}})</h5>
+    <hr>
+    <br>
+    <h4>6.{{list[5].question}}</h4>
+    <ng-container *ngFor="let option of list[5].options">
+      <div *ngIf="option == quiz.value.ans6">
+        <input type="radio" checked> {{ option }}<br/>
+      </div>
+      <div *ngIf="!(option == quiz.value.ans6)">
+        <input  type="radio"> {{ option }}<br/>
+      </div>
+    </ng-container>
+    <h5 *ngIf="list[5].answer === quiz.value.ans6">Correct</h5>
+    <h5 *ngIf="!(list[5].answer === quiz.value.ans6)">Wrong- (Correct answer is {{list[5].answer}})</h5>
+    <hr>
+    <br>
+    <h4>7.{{list[6].question}}</h4>
+    <ng-container *ngFor="let option of list[6].options">
+      <div *ngIf="option == quiz.value.ans7">
+        <input type="radio" checked> {{ option }}<br/>
+      </div>
+      <div *ngIf="!(option == quiz.value.ans7)">
+        <input  type="radio"> {{ option }}<br/>
+      </div>
+    </ng-container>
+    <h5 *ngIf="list[6].answer === quiz.value.ans7">Correct</h5>
+    <h5 *ngIf="!(list[6].answer === quiz.value.ans7)">Wrong- (Correct answer is {{list[6].answer}})</h5>
+
+    <hr>
+    <br>
+    <h4>8.{{list[7].question}}</h4>
+    <ng-container *ngFor="let option of list[7].options">
+      <div *ngIf="option == quiz.value.ans8">
+        <input type="radio" checked> {{ option }}<br/>
+      </div>
+      <div *ngIf="!(option == quiz.value.ans8)">
+        <input  type="radio"> {{ option }}<br/>
+      </div>
+    </ng-container>
+    <h5 *ngIf="list[7].answer === quiz.value.ans8">Correct</h5>
+    <h5 *ngIf="!(list[7].answer === quiz.value.ans8)">Wrong- (Correct answer is {{list[7].answer}})</h5>
+    <hr>
+    <br>
+    <h4>9.{{list[8].question}}</h4>
+    <ng-container *ngFor="let option of list[8].options">
+      <div *ngIf="option == quiz.value.ans9">
+        <input type="radio" checked> {{ option }}<br/>
+      </div>
+      <div *ngIf="!(option == quiz.value.ans9)">
+        <input  type="radio"> {{ option }}<br/>
+      </div>
+    </ng-container>
+    <h5 *ngIf="list[8].answer === quiz.value.ans9">Correct</h5>
+    <h5 *ngIf="!(list[8].answer === quiz.value.ans9)">Wrong- (Correct answer is {{list[8].answer}})</h5>
+    <hr>
+    <br>
+    <h4>10.{{list[9].question}}</h4>
+    <ng-container *ngFor="let option of list[9].options">
+      <div *ngIf="option == quiz.value.ans10">
+        <input type="radio" checked> {{ option }}<br/>
+      </div>
+      <div *ngIf="!(option == quiz.value.ans10)">
+        <input  type="radio"> {{ option }}<br/>
+      </div>
+    </ng-container>
+    <h5 *ngIf="list[9].answer === quiz.value.ans10">Correct</h5>
+    <h5 *ngIf="!(list[9].answer === quiz.value.ans10)">Wrong- (Correct answer is {{list[9].answer}})</h5>
+    <hr>
+    <br>
+    <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+    color='accent' type="button" routerLink="/dashboard">Go To Dashboard</button>
+    <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
+    color='accent' type="button" (click)='another()'>Take Another Quiz</button>
+  </div>
+</div>
 </div>

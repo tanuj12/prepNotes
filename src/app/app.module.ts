@@ -27,21 +27,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { QuizComponent } from './pages/quiz/quiz.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { VideoLinksComponent } from './pages/video-links/video-links.component';
+import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
-    MDBBootstrapModule.forRoot(),
-    MatCardModule,
-    MatFormFieldModule,
-    NgxDropzoneModule,
-    MatExpansionModule,
     FormsModule,
     HttpClientModule,
     ComponentsModule,
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    NgxExtendedPdfViewerModule,
+    MatSelectModule,
     ToastrModule.forRoot()
   ],
   declarations: [AppComponent, AdminLayoutComponent],
