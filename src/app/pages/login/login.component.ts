@@ -16,12 +16,12 @@ import { stringify } from 'querystring';
 <div class="modal-dialog form-dark" role="document" style="margin-top:-22%;margin-left:0%;margin-right:0%">
 
 <form [formGroup]='form' >
-  <div class="modal-content card card-image" style="  background-color: gray;">
+  <div class="modal-content card card-image" style=" background-image: url('assets/img/bg1.jpg');background-size:cover">
     <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
       <div class="signup-form">
-        <h2>&nbsp;&nbsp;Login&nbsp;&nbsp;</h2>
+        <h2><b>&nbsp;&nbsp;Login&nbsp;&nbsp;</b></h2>
         <div class="form-group">
-        <input formControlName="uName" type="text" class="form-control" name="email" placeholder="Email" >
+          <input formControlName="uName" type="text" class="form-control" name="email" placeholder="Email" >
         </div>
         <div class="form-group">
           <input formControlName = 'password' type="password" class="form-control" name="password" placeholder="Password">
@@ -30,7 +30,7 @@ import { stringify } from 'querystring';
           <button type="submit" (click) = 'onSubmit()' class="btn btn-success btn-lg btn-block">Login</button>
         </div>
 
-        <div class="text-center">Create a new Account? <button class="linkbtn" (click)='open2()'>Sign up </button></div>
+        <div class="text-center" style="font-weight:bold;">Create a new Account? <button class="linkbtn" (click)='open2()'>Sign up </button></div>
       </div>
     </div>
   </div>

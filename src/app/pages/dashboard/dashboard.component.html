@@ -5,25 +5,31 @@
         <div class=" card-header">
           <div class=" row">
             <div class=" col-sm-6 text-left">
-              <h2 class=" card-title">Welcome to PrepNotes</h2>
+              <h2 class=" card-title" style="font-size: xx-large;font-weight: bold;"><b>Welcome to prepNotes</b></h2>
             </div>
             <div class=" col-sm-6 text-left">
             </div>
             <div class="card-body">
-              <div style="border: 1px solid #e0e0e0;">
+            
                 <!--****** agron slider -->
                 <!-- <ngx-extended-pdf-viewer [src]="'assets/pdf/1.pdf'" useBrowserLocale="true" height="80vh"></ngx-extended-pdf-viewer> -->
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br><br>
-                <br>
-              </div>
+                <section class="container">
+                  <mdb-carousel [isControls]="true" [animation]="'slide'">
+                    <mdb-carousel-item>
+                      <img class="d-block w-100" src="assets/img/slide2.jpg" alt="First slide">
+                    </mdb-carousel-item>
+                    <mdb-carousel-item>
+                      <img class="d-block w-100" src="assets/img/slide3.jpg" alt="Second slide">
+                    </mdb-carousel-item>
+                    <mdb-carousel-item>
+                      <img class="d-block w-100" src="assets/img/slide4.jpg" alt="Third slide">
+                    </mdb-carousel-item>
+                    <mdb-carousel-item>
+                      <img class="d-block w-100" src="assets/img/slide5.jpg" alt="Third slide">
+                    </mdb-carousel-item>
+                  </mdb-carousel>
+                </section>
+              
             </div>
 
           </div>
@@ -39,12 +45,12 @@
         <div class=" card-header">
           <div class=" row">
             <div class=" col-sm-6 text-left">
-              <h2 class=" card-title">Recently asked Questions</h2>
+              <h2 class=" card-title"><b>Recently asked Questions</b></h2>
             </div>
             <div class=" col-sm-6 text-left">
             </div>
             <div class="card-body" >
-              <div *ngIf='qNa.length' style="border: 1px solid #e0e0e0;">
+              <div *ngIf='qNa.length' style="border: 1px solid black;">
                 <!--****** agron slider -->
                 <mat-expansion-panel *ngFor='let q of qNa | paginate: {id:"some", itemsPerPage: 5, currentPage: p, totalItems:qNa.length }' >
                   <mat-expansion-panel-header>
@@ -65,7 +71,7 @@
                       screenReaderCurrentLabel="You're on page">
 </pagination-controls>
               </div>
-              <div *ngIf="!qNa.length" style="border: 1px solid #e0e0e0;">
+              <div *ngIf="!qNa.length" style="border: 1px solid black;">
                 <h3 class="card-title">No questions asked.</h3>
               </div>
             </div>
@@ -83,12 +89,12 @@
         <div class=" card-header">
           <div class=" row">
             <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
-              <h2 class=" card-title">Recently created Notes</h2>
+              <h2 class=" card-title"><b>Recently created Notes</b></h2>
             </div>
             <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
             </div>
             <div class="card" style="padding: 14px;">
-              <div *ngIf="slides.length" style="border: 1px solid #e0e0e0;">
+              <div *ngIf="slides.length" style="border: 1px solid black;">
                 <!--****** agron slider -->
                 <mdb-carousel   class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
                 [animation]="'slide'" [interval]="'0'">
@@ -118,8 +124,8 @@
                     </mdb-carousel-item>
                   </mdb-carousel>
               </div>
-              <div *ngIf="!slides.length" style="border: 1px solid #e0e0e0;">
-                <h3 class="card-title">No notes generated.</h3>
+              <div *ngIf="!slides.length" style="border: 1px solid black;">
+                <a href="/notes"><h3 class="card-title">Create your first notes now</h3></a>
               </div>
 
             </div>
@@ -136,14 +142,14 @@
         <div class=" card-header">
           <div class=" row">
             <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
-              <h2 class=" card-title">Global Notes</h2>
+              <h2 class=" card-title"><b>Global Notes</b></h2>
             </div>
             <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
             </div>
 
             <div class="card" style="padding: 14px;">
 
-              <div *ngIf="gNotes.length" style="border: 1px solid #e0e0e0;">
+              <div *ngIf="gNotes.length" style="border: 1px solid black;">
                 <!--****** agron slider -->
 
                 <div class="md-form mt-0 form-inline" style="width: 100%;">
@@ -173,7 +179,7 @@
                     </mdb-carousel-item>
                   </mdb-carousel>
               </div>
-              <div *ngIf="!gNotes.length" style="border: 1px solid #e0e0e0;">
+              <div *ngIf="!gNotes.length" style="border: 1px solid black;">
                 <h3 class="card-title">No Global notes Available.</h3>
               </div>
             </div>
@@ -189,7 +195,7 @@
     <div class=" col-md-12">
       <div class=" card">
         <div class=" card-header">
-          <h4 class=" card-title">Quiz Results</h4>
+          <h4 class=" card-title"><b>Quiz Results</b></h4>
         </div>
         <div class=" card-body">
           <div class=" table-responsive">
@@ -224,7 +230,7 @@
         <div class=" card-header">
           <div class=" row">
             <div class=" col-sm-6 text-left">
-              <h2 class=" card-title">Topic Notes</h2>
+              <h2 class=" card-title"><b>Topic Notes</b></h2>
             </div>
             <div class=" col-sm-6 text-left">
             </div>

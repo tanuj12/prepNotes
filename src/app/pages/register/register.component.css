@@ -76,6 +76,7 @@ a {
 	margin: 0 0 15px;
 	position: relative;
 	text-align: center;
+	font-weight: bolder;
 }
 .signup-form h2:before, .signup-form h2:after{
 	content: "";
@@ -187,4 +188,8 @@ a {
     color: #069;
     text-decoration: underline;
     cursor: pointer;
+  }
+
+  .hint-text {
+	font-weight: bold;
   }

@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
     <div class="modal-dialog form-dark" role="document" style="margin-top:-22%;margin-left:0%;margin-right:0%">
 
       <form [formGroup] = 'form' (submit) ='onSubmit()'>
-    	  <div class="modal-content card card-image" style="  background-color: gray;">
+    	  <div class="modal-content card card-image" style=" background-image: url('assets/img/bg1.jpg');background-size:cover">
           <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
             <div class="signup-form">
 		          <h2>&nbsp;&nbsp;Register&nbsp;&nbsp;</h2>
@@ -33,13 +33,13 @@ import { Subscription } from 'rxjs';
                 <input formControlName ='cpassword' type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
               </div>
               <div class="form-group">
-                <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+                <label class="checkbox-inline" style="font-weight:bold;"><input type="checkbox" required="required"> I accept the <a href="#" style="font-weight:bold;">Terms of Use</a> &amp; <a href="#" style="font-weight:bold;">Privacy Policy</a></label>
 		          </div>
 		          <div class="form-group">
                 <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
               </div>
 
-              <div class="text-center">Already have an account? <button class="linkbtn" (click)='open2()'>Sign in </button></div>
+              <div class="text-center" style="font-weight:bold;">Already have an account? <button class="linkbtn" (click)='open2()' style="font-weight:bold;">Sign in </button></div>
             </div>
           </div>
         </div>
