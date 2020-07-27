@@ -20,14 +20,14 @@
               <div class="row" style="margin-top: 1%;">
                 <div class=" col-lg-5 col-3 col-md-5 col-sm-4 "></div>
                 <div *ngIf="!uploadingSpinner && !(files.length == 0)" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
-                 <button (click)='uploadDoc()' type="button" class="btn btn-outline-primary btn-info btn-lg" >Upload</button>
+                 <button  (click)='uploadDoc()' type="button" class="btn btn-outline-primary btn-info btn-lg" mdbBtn color="primary" class="waves-light btn-lg">Upload</button>
                 </div>
                 <div *ngIf="!uploadingSpinner && (files.length == 0)" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
-                  <button type="button" disabled class="btn btn-outline-primary btn-info btn-lg" >Upload</button>
+                  <button  type="button" disabled class="btn btn-outline-primary btn-info btn-lg"mdbBtn color="primary" class="waves-light btn-lg" >Upload</button>
                  </div>
                 <div *ngIf="uploadingSpinner" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
                   <h5>Uploading Files..Please wait</h5>
-                  <button type="button" disabled class="btn btn-outline-primary btn-info btn-lg" >Upload</button>
+                  <button  type="button" disabled class="btn btn-outline-primary btn-info " mdbBtn color="primary" class="waves-light btn-lg">Upload</button>
                 </div>
             </div>
           </div>
@@ -66,7 +66,7 @@
                           </div>
                           <div  class="col-0 col-sm-0 col-lg-4 col-md-4">
                             <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                              color='accent' type="button" (click)='question()'>Ask</button>
+                            mdbBtn color="primary" class="waves-light" type="button" (click)='question()'>Ask</button>
                           </div>
                         </div>
                       </div>
@@ -130,7 +130,7 @@
                         </div>
                         <div  class="col-0 col-sm-0 col-lg-4 col-md-4">
                           <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                            color='accent' type="submit" (click)='generateNotes()'>Generate Notes</button>
+                          mdbBtn color="primary" class="waves-light" type="submit" (click)='generateNotes()'>Generate Notes</button>
                         </div>
                       </div>
                     </div>
@@ -141,52 +141,21 @@
                     <div *ngIf='notesReady'>
                           <p *ngIf="!preview" class="d-inline">Notes have been generated.(You can preview notes before downloading.)</p>&nbsp;&nbsp;&nbsp;
                           <button *ngIf="!preview" mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                            color='accent' type="button" (click)='previewDoc()'>&nbsp;&nbsp; Preview Notes&nbsp;&nbsp;</button>
+                          mdbBtn color="primary" class="waves-light" type="button" (click)='previewDoc()'>&nbsp;&nbsp; Preview Notes&nbsp;&nbsp;</button>
                             <ngx-doc-viewer *ngIf="preview" [url]='link' viewer="google" style="width:100%;height:50vh;"></ngx-doc-viewer>
                             <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                            color='accent' type="button" (click)='downloadNotes()' >Download Notes</button>
+                            mdbBtn color="primary" class="waves-light" type="button" (click)='downloadNotes()' >Download Notes</button>
                             <button *ngIf="notGlobal && !settingG" mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                            color='accent' type="button" (click)='setGlobal()' >Add To Global Notes</button>
+                            mdbBtn color="primary" class="waves-light" type="button" (click)='setGlobal()' >Add To Global Notes</button>
                             <button *ngIf="!notGlobal && !settingG" mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                            color='accent' type="button" (click)='setNotGlobal()' >Remove from Global Notes</button>
+                            mdbBtn color="primary" class="waves-light" type="button" (click)='setNotGlobal()' >Remove from Global Notes</button>
                             <button *ngIf="notGlobal && settingG" disabled mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                            color='accent' type="button" (click)='setGlobal()' >Add To Global Notes</button>
+                            mdbBtn color="primary" class="waves-light" type="button" (click)='setGlobal()' >Add To Global Notes</button>
                             <button *ngIf="!notGlobal && settingG" disabled mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-                            color='accent' type="button" (click)='setNotGlobal()' >Remove from Global Notes</button>
+                            mdbBtn color="primary" class="waves-light" type="button" (click)='setNotGlobal()' >Remove from Global Notes</button>
                           </div>
                   </form>
                   <hr>
-                  <div class=" row">
-                    <div class=" col-12">
-                      <div class=" card ">
-                        <div class=" card-header">
-                          <div class=" row">
-                            <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
-                              <h4 class=" card-title">Recently created Notes</h4>
-                            </div>
-                            <div class=" col-6 col-sm-6 col-md-6 col-lg-6 text-left">
-                            </div>
-                            <div class="card-body">
-                              <div style="border: 1px solid;">
-                                <!--****** agron slider -->
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <br><br>
-                                <br>
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </mat-expansion-panel>
               </mat-accordion>
             </div>

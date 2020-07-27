@@ -5,13 +5,6 @@ import { CommonModule } from "@angular/common";
 import { FormsModule ,ReactiveFormsModule } from "@angular/forms";
 
 import { AdminLayoutRoutes } from "./admin-layout.routing";
-import { DashboardComponentOld } from "../../pages/dashboard(old)/dashboard.component";
-import { IconsComponent } from "../../pages/icons/icons.component";
-import { MapComponent } from "../../pages/map/map.component";
-import { NotificationsComponent } from "../../pages/notifications/notifications.component";
-import { UserComponent } from "../../pages/user/user.component";
-import { TablesComponent } from "../../pages/tables/tables.component";
-import { TypographyComponent } from "../../pages/typography/typography.component";
 // import { RtlComponent } from "../../pages/rtl/rtl.component";
 import { ButtonsModule,CardsModule,CarouselModule, WavesModule, MDBBootstrapModule } from 'angular-bootstrap-md'
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -28,7 +21,6 @@ import { AuthGuard } from 'src/app/guards/auth-guard.service';
 import { SafePipe } from 'src/app/pipes/safePipe';
 import {NgxDocViewerModule} from 'ngx-doc-viewer';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { AboutusComponent } from 'src/app/pages/aboutus/aboutus.component';
 import { QuizComponent } from 'src/app/pages/quiz/quiz.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { VideoLinksComponent } from 'src/app/pages/video-links/video-links.component';
@@ -60,7 +52,6 @@ import { FilterPipe } from 'src/app/pipes/filter.pipe';
     MatOptionModule
   ],
   declarations: [
-    DashboardComponentOld,
     HomePageComponent,
     DashboardComponent,
     NoteQComponent,
@@ -68,14 +59,7 @@ import { FilterPipe } from 'src/app/pipes/filter.pipe';
     NgbdModalContent,
     NgbdModalContent1,
     RegisterComponent,
-    UserComponent,
-    TablesComponent,
-    IconsComponent,
-    TypographyComponent,
-    NotificationsComponent,
-    MapComponent,
     SafePipe,
-    AboutusComponent,
     QuizComponent,
     VideoLinksComponent,
     FilterPipe

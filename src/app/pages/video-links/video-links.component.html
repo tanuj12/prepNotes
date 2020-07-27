@@ -12,7 +12,7 @@ body {
 .column {
   float: left;
   width: 50%;
-  
+
 }
 
 /* Remove extra left and right margins, due to padding */
@@ -37,7 +37,7 @@ body {
 /* Style the counter cards */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  
+
   text-align: start;
   background-color: #f1f1f1;
 }
@@ -47,7 +47,7 @@ body {
     <div class="md-form mt-0" style="width: 100%;">
       <input formControlName='keyword' class="form-control mr-sm-2" type="text" placeholder="Search" style="width: 80%;">
       <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
-      color='accent' type="button" (click)='searching()'>Search</button>
+      mdbBtn color="primary" class="waves-light" type="button" (click)='searching()'>Search</button>
     </div>
   </form>
 
@@ -57,15 +57,15 @@ body {
         <div class=" card-body">
           <div class="row" >
             <div class="col-md-12">
-              <div class="row" *ngFor="let item of links">
-                <div class="col-8 col-sm-8 col-md-8 col-lg-8">
+              <div class="row" *ngFor="let item of links" style="border-bottom: 1px solid;">
+                <div class="col-8 col-sm-8 col-md-8 col-lg-8" style="padding-top: 30px;">
                   <div class="row">
                     <div class="column">
                       <div class="card">
                         <iframe width="380" height="315"
                            [src]="item.link |safe" allow="fullscreen">
                       </iframe>
-                      </div>  
+                      </div>
                     </div>
                     <div class="column">
                       <div class="card">

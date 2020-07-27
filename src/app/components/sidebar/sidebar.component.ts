@@ -8,26 +8,14 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
   {
-    path: "/dashboardOld",
-    title: "DashboardOld",
+    path: "/homePage",
+    title: "Home Page",
     icon: "icon-chart-pie-36",
     class: ""
   },
   {
-    path: "/videoLinks",
-    title: "Video Links",
-    icon: "icon-chart-pie-36",
-    class: ""
-  },
-  {
-    path: "/quiz",
-    title: "Quiz",
-    icon: "icon-chart-pie-36",
-    class: ""
-  },
-  {
-    path: "/aboutus",
-    title: "AboutUs",
+    path: "/dashboard",
+    title: "Dashboard",
     icon: "icon-chart-pie-36",
     class: ""
   },
@@ -44,53 +32,18 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/dashboard",
-    title: "Dashboard",
+    path: "/videoLinks",
+    title: "Video Links",
     icon: "icon-chart-pie-36",
     class: ""
   },
   {
-    path: "/homePage",
-    title: "Home Page",
+    path: "/quiz",
+    title: "Quiz",
     icon: "icon-chart-pie-36",
-    class: ""
-  },
-  {
-    path: "/icons",
-    title: "Icons",
-    icon: "icon-atom",
-    class: ""
-  },
-  {
-    path: "/maps",
-    title: "Maps",
-    icon: "icon-pin",
-    class: "" },
-  {
-    path: "/notifications",
-    title: "Notifications",
-    icon: "icon-bell-55",
     class: ""
   },
 
-  {
-    path: "/user",
-    title: "User Profile",
-    icon: "icon-single-02",
-    class: ""
-  },
-  {
-    path: "/tables",
-    title: "Table List",
-    icon: "icon-puzzle-10",
-    class: ""
-  },
-  {
-    path: "/typography",
-    title: "Typography",
-    icon: "icon-align-center",
-    class: ""
-  },
 ];
 
 @Component({
