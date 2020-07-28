@@ -142,7 +142,7 @@
                           <p *ngIf="!preview" class="d-inline">Notes have been generated.(You can preview notes before downloading.)</p>&nbsp;&nbsp;&nbsp;
                           <button *ngIf="!preview" mat-raised-button class="btn btn-outline-primary btn-info btn-md"
                           mdbBtn color="primary" class="waves-light" type="button" (click)='previewDoc()'>&nbsp;&nbsp; Preview Notes&nbsp;&nbsp;</button>
-                            <ngx-doc-viewer *ngIf="preview" [url]='link' viewer="google" style="width:100%;height:50vh;"></ngx-doc-viewer>
+                            <ngx-doc-viewer *ngIf="preview" [url]='link' viewer="google" style="width:100%;height:90vh;"></ngx-doc-viewer>
                             <button mat-raised-button class="btn btn-outline-primary btn-info btn-md"
                             mdbBtn color="primary" class="waves-light" type="button" (click)='downloadNotes()' >Download Notes</button>
                             <button *ngIf="notGlobal && !settingG" mat-raised-button class="btn btn-outline-primary btn-info btn-md"
