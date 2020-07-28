@@ -25,7 +25,6 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RegisterComponent } from './pages/register/register.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { QuizComponent } from './pages/quiz/quiz.component';
-import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { VideoLinksComponent } from './pages/video-links/video-links.component';
 import {MatSelectModule} from '@angular/material/select';
 import { FilterPipe } from './pipes/filter.pipe';
