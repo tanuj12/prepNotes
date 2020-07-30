@@ -10,7 +10,7 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/homePage",
     title: "Home Page",
-    icon: "icon-chart-pie-36",
+    icon: "icon-world",
     class: ""
   },
   {
@@ -22,25 +22,25 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/notes",
     title: "Notes",
-    icon: "icon-chart-pie-36",
+    icon: "icon-notes",
     class: ""
   },
   {
     path: "/QnA",
     title: "QnA",
-    icon: "icon-chart-pie-36",
+    icon: "icon-paper",
     class: ""
   },
   {
     path: "/videoLinks",
     title: "Video Links",
-    icon: "icon-chart-pie-36",
+    icon: "icon-triangle-right-17",
     class: ""
   },
   {
     path: "/quiz",
     title: "Quiz",
-    icon: "icon-chart-pie-36",
+    icon: "icon-bulb-63",
     class: ""
   },
 
