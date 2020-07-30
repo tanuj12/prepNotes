@@ -6,6 +6,7 @@
 
 .btn {
   display: inline-block;
+  padding-left: inherit;
   font-weight: $btn-font-weight;
   text-align: center;
   white-space: nowrap;
