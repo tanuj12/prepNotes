@@ -30,7 +30,7 @@ import { stringify } from 'querystring';
           <button type="submit" (click) = 'onSubmit()' class="btn btn-success btn-lg btn-block">Login</button>
         </div>
 
-        <div class="text-center" style="font-weight:bold;">Create a new Account? <button class="linkbtn" (click)='open2()'>Sign up </button></div>
+        <div class="text-center" style="font-weight:bold;">Create a new Account? <button class="linkbtn" (click)='open2()' style="color:#00FFFF;">Sign up </button></div>
       </div>
     </div>
   </div>

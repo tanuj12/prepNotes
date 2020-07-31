@@ -33,13 +33,13 @@ import { Subscription } from 'rxjs';
                 <input formControlName ='cpassword' type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
               </div>
               <div class="form-group">
-                <label class="checkbox-inline" style="font-weight:bold;"><input type="checkbox" required="required"> I accept the <a href="#" style="font-weight:bold;">Terms of Use</a> &amp; <a href="#" style="font-weight:bold;">Privacy Policy</a></label>
+                <label class="checkbox-inline" style="font-weight:bold; color:#00CED1;"><input type="checkbox" required="required"> I accept the <a href="#" style="font-weight:bold;">Terms of Use</a> &amp; <a href="#" style="font-weight:bold;">Privacy Policy</a></label>
 		          </div>
 		          <div class="form-group">
                 <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
               </div>
 
-              <div class="text-center" style="font-weight:bold;">Already have an account? <button class="linkbtn" (click)='open2()' style="font-weight:bold;">Sign in </button></div>
+              <div class="text-center" style="font-weight:bold;">Already have an account? <button class="linkbtn" (click)='open2()' style="font-weight:bold; color:#00FFFF;">Sign in </button></div>
             </div>
           </div>
         </div>

@@ -5,30 +5,33 @@
       <div class=" card ">
         <div class=" card-header">
           <div class=" row">
-            <div class=" col-sm-6 text-left">
-              <p >Drop or select .docx files to upload</p>
-            </div>
-            <div class=" col-sm-6 text-left">
-            </div>
-            <div class="card-body" style="padding-top: 0%;">
-              <ngx-dropzone (change)="onSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.wordprocessingml.document'">
-                <ngx-dropzone-label>Click here to select a .docx file</ngx-dropzone-label>
-                <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-                    <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
-                </ngx-dropzone-preview>
-              </ngx-dropzone>
-              <div class="row" style="margin-top: 1%;">
-                <div class=" col-lg-5 col-3 col-md-5 col-sm-4 "></div>
-                <div *ngIf="!uploadingSpinner && !(files.length == 0)" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
-                 <button  (click)='uploadDoc()' type="button" class="btn btn-outline-primary btn-info btn-lg" mdbBtn color="primary" class="waves-light btn-lg">Upload</button>
-                </div>
-                <div *ngIf="!uploadingSpinner && (files.length == 0)" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
-                  <button  type="button" disabled class="btn btn-outline-primary btn-info btn-lg"mdbBtn color="primary" class="waves-light btn-lg" >Upload</button>
-                 </div>
-                <div *ngIf="uploadingSpinner" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
-                  <h5>Uploading Files..Please wait</h5>
-                  <button  type="button" disabled class="btn btn-outline-primary btn-info " mdbBtn color="primary" class="waves-light btn-lg">Upload</button>
-                </div>
+            <div class="col-sm-4 d-flex flex-wrap " style="margin-bottom: 30px;"><img src="assets/img/upload.gif"></div>
+            <div class="col-sm-8 d-flex flex-wrap">
+              <div class=" col-sm-6 text-left">
+                <p >Drop or select .docx files to upload</p>
+              </div>
+              <div class=" col-sm-6 text-left">
+              </div>
+              <div class="card-body" style="padding-top: 0%;">
+                <ngx-dropzone (change)="onSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.wordprocessingml.document'">
+                  <ngx-dropzone-label>Click here to select a .docx file</ngx-dropzone-label>
+                  <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                      <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+                  </ngx-dropzone-preview>
+                </ngx-dropzone>
+                <div class="row" style="margin-top: 1%;">
+                  <div class=" col-lg-5 col-3 col-md-5 col-sm-4 "></div>
+                  <div *ngIf="!uploadingSpinner && !(files.length == 0)" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
+                   <button  (click)='uploadDoc()' type="button" class="btn btn-outline-primary btn-info btn-lg" mdbBtn color="primary" class="waves-light btn-lg">Upload</button>
+                  </div>
+                  <div *ngIf="!uploadingSpinner && (files.length == 0)" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
+                    <button  type="button" disabled class="btn btn-outline-primary btn-info btn-lg"mdbBtn color="primary" class="waves-light btn-lg" >Upload</button>
+                   </div>
+                  <div *ngIf="uploadingSpinner" class="col-lg-6 col-6 col-md-7 col-sm-6 " style="margin-left: -2%;">
+                    <h5>Uploading Files..Please wait</h5>
+                    <button  type="button" disabled class="btn btn-outline-primary btn-info " mdbBtn color="primary" class="waves-light btn-lg">Upload</button>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
