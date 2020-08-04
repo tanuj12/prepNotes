@@ -13,7 +13,7 @@
               <div class=" col-sm-6 text-left">
               </div>
               <div class="card-body" style="padding-top: 0%;">
-                <ngx-dropzone (change)="onSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.wordprocessingml.document'">
+                <ngx-dropzone (change)="onSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf'">
                   <ngx-dropzone-label>Click here to select a .docx file</ngx-dropzone-label>
                   <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
                       <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
